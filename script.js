@@ -144,7 +144,7 @@ nicknameBtn.addEventListener('click', () => {
   // -------------------------
   if (inputValue === "MORAESDEV") {
     alert("Modo dev ativado! Pulando etapas...");
-    showStage(18); // vai direto para Stage 13
+    showStage(14); // vai direto para Stage 13
     return; // sai da função sem rodar o restante das validações
   }
 
