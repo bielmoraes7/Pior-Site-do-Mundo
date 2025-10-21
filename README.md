@@ -72,4 +72,4 @@ Apaixonado por tecnologia, humor e experiências interativas que não fazem o me
 📧 Contato: [gabrielmoraesdev@outlook.com]
 🐙 GitHub: https://github.com/bielmoraes7
 
-⭐ Se você riu ou achou genialmente inútil, deixe uma estrela no repositório!
+>⭐ Se você riu ou achou genialmente inútil, deixe uma estrela no repositório!
