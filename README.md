@@ -65,8 +65,10 @@ O site foi feito para **experimentar interações**, **animar o usuário** e dem
 
 🧑‍💻 Autor
 
-Gabriel Moraes
+Gabriel Moraes.
+
 Desenvolvedor e criador do projeto.
+
 Apaixonado por tecnologia, humor e experiências interativas que não fazem o menor sentido, mas divertem muito.
 
 📧 Contato: [gabrielmoraesdev@outlook.com]
