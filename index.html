@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>O Pior Site do Mundo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- ETAPA 1 -->
+    <section class="stage active" data-stage="1">
+      <h1>🌍 O Pior Site do Mundo</h1>
+      <p>
+        Bem-vindo ao site mais questionável da internet.<br>
+        Clique abaixo para iniciar sua experiência.
+      </p>
+      <button id="start-btn">Começar Experiência</button>
+    </section>
+
+    <!-- ETAPA 2 -->
+    <section class="stage" data-stage="2">
+      <h2>Etapa 2 — Bem-Vindo!</h2>
+      <p>Parabéns, iremos iniciar os primeiros passos.</p>
+      <button class="next-btn">Continuar</button>
+    </section>
+
+    <!-- ETAPA 3 -->
+    <section class="stage" data-stage="3">
+  <h2>Etapa 3 — Cadastro</h2>
+  <p>
+    Clique 
+    <span id="continue-link" style="color:#b08968; cursor:pointer; font-weight:bold;">aqui</span> 
+    para iniciar o cadastro
+  </p>
+  <button id="back-btn">Cadastro</button>
+</section>
+
+  <!-- ETAPA 4 -->
+<section class="stage" data-stage="4">
+  <h2>Etapa 4 — Escolha seu Nickname</h2>
+  <p>Digite seu nome de usuário abaixo:</p>
+
+<input type="text" id="nickname-input" placeholder="Digite seu nickname aqui">
+  <div id="nickname-msg" style="color:red; margin-top:10px; font-weight:bold;"></div>
+
+  <button id="nickname-btn">Próximo</button>
+</section>
+
+  <!-- ETAPA 5 -->
+<section class="stage" data-stage="5">
+  <h2>Etapa 5 — Confirme seu Nickname</h2>
+  <p>Digite novamente o seu nickname para confirmar:</p>
+
+  <input type="text" id="confirm-nickname-input" placeholder="Confirme seu nickname">
+  <div id="confirm-msg" style="color:red; margin-top:10px; font-weight:bold;"></div>
+
+  <button id="confirm-btn">Confirmar</button>
+  <p id="timer" style="margin-top:10px; font-weight:bold;">Tempo restante: 7s</p>
+</section>
+
+<!-- ETAPA 6 -->
+<section class="stage" data-stage="6">
+  <h2>Etapa 6 — Defina sua senha</h2>
+  <p>Crie uma senha que satisfaça todos os requisitos listados.</p>
+
+  <input type="password" id="password-input" placeholder="Digite sua senha aqui" autocomplete="new-password">
+  <div id="password-msg" style="margin-top:10px; font-weight:bold; color:red;"></div>
+
+  <div style="display:flex; gap:10px; margin-top:12px; align-items:center;">
+    <button id="show-password-btn" type="button">Visualizar senha</button>
+    <button id="password-next-btn" type="button" disabled>Próximo</button>
+  </div>
+
+  <div id="password-success" style="margin-top:12px; font-weight:bold; color: #27AE60; display:none;">
+    ✅ Senha válida! Pode prosseguir.
+  </div>
+</section>
+
+<!-- ETAPA 7 -->
+<section class="stage" data-stage="7">
+  <h2>Etapa 7 — Confirme sua senha</h2>
+  <p>Digite novamente sua senha:</p>
+
+  <input type="password" id="confirm-password-input" placeholder="Confirme sua senha" autocomplete="new-password">
+  <div style="margin-top:10px; font-weight:bold; color:red;" id="confirm-password-msg"></div>
+
+  <div style="display:flex; gap:10px; margin-top:12px; align-items:center;">
+    <button id="show-confirm-pass-btn" type="button">Visualizar senha</button>
+    <button id="confirm-password-next-btn" type="button">Próximo</button>
+  </div>
+</section>
+
+<!-- ETAPA 8 -->
+<section class="stage" data-stage="8">
+  <h2>Etapa 8 — Confirme sua data de nascimento</h2>
+  <p>Clique no campo para selecionar sua data de nascimento:</p>
+
+  <input type="text" id="dob-input" placeholder="Clique para selecionar" readonly>
+  
+  <!-- Seletor circular -->
+  <div id="circular-picker" style="display:none; position:relative; width:300px; height:300px; margin:20px auto; border-radius:50%; border:2px solid #333;">
+    <div id="picker-pointer" style="width:20px; height:20px; background:red; border-radius:50%; position:absolute; top:140px; left:140px; cursor:pointer;"></div>
+  </div>
+
+  <button id="dob-next-btn">Prosseguir</button>
+</section>
+
+<!-- ETAPA 9 -->
+<section class="stage" data-stage="9">
+  <h2>Etapa 9 — Confirme sua idade</h2>
+  <p>Clique no campo para confirmar sua idade:</p>
+
+  <input type="text" id="age-input" placeholder="Clique para confirmar" readonly>
+  <div id="age-msg" style="margin-top:10px; color:red; font-weight:bold;"></div>
+
+  <button id="age-next-btn">Prosseguir</button>
+</section>
+
+<!-- ETAPA 10 -->
+<section class="stage" data-stage="10">
+  <h2>Etapa 10 — Localização</h2>
+  <p>Clique no mapa abaixo para selecionar o país onde você mora:</p>
+
+  <div id="map-container" style="position:relative; display:inline-block;">
+    <img 
+      id="rustic-map" 
+      src="https://cdn.pixabay.com/photo/2024/04/04/00/17/ai-generated-8674061_960_720.png" 
+      alt="Mapa do mundo" 
+      style="width:100%; max-width:400px; border:2px solid #333; border-radius:12px; filter:sepia(80%) contrast(1.2); cursor:pointer;">
+    
+    <div 
+      id="map-marker" 
+      style="display:none; width:16px; height:16px; border-radius:50%; background:red; position:absolute; transform:translate(-50%, -50%); box-shadow:0 0 6px #000;">
+    </div>
+  </div>
+
+  <input type="text" id="country-input" placeholder="Nenhum país selecionado" readonly style="margin-top:12px;">
+
+  <div id="country-msg" style="margin-top:10px; color:red; font-weight:bold; min-height:24px;"></div>
+
+  <button id="country-next-btn" disabled>Prosseguir</button>
+</section>
+
+<!-- ETAPA 11 -->
+<section class="stage" data-stage="11">
+  <h2>Etapa 11 — Endereço</h2>
+  <p>Preencha seus dados de endereço:</p>
+
+  <label for="city-input">Cidade:</label>
+  <input list="city-list" id="city-input" placeholder="Digite sua cidade">
+  <datalist id="city-list"></datalist>
+
+  <label for="street-input">Rua:</label>
+  <input type="text" id="street-input" placeholder="Digite sua rua">
+
+  <label for="number-input">Número:</label>
+  <input type="text" id="number-input" placeholder="Digite seu número">
+
+  <label for="reference-input">Ponto de referência:</label>
+  <input type="text" id="reference-input" placeholder="Clique para confirmar">
+  <div id="reference-msg" style="margin-top:10px; color:red; font-weight:bold;"></div>
+
+  <button id="stage11-next-btn" disabled>Prosseguir</button>
+</section>
+
+<!-- ETAPA 12 -->
+<section class="stage" data-stage="12">
+  <h2>Etapa 12 — Cor favorita</h2>
+  <p>Digite sua cor favorita:</p>
+
+  <input type="text" id="color-input" placeholder=" ">
+  <div id="color-msg" style="margin-top:10px; color:red; font-weight:bold;"></div>
+
+  <button id="stage12-next-btn" disabled>Prosseguir</button>
+</section>
+
+<!-- ETAPA 13 -->
+<section class="stage" data-stage="13">
+  <h2>Etapa 13 — Código de Segurança</h2>
+  <p>Insira seu código pessoal de 4 dígitos:</p>
+
+  <input type="text" id="code-input" placeholder="XXXX" maxlength="4">
+  <div id="code-msg" style="margin-top:10px; color:red; font-weight:bold;"></div>
+
+  <button id="stage13-next-btn" disabled>Prosseguir</button>
+</section>
+
+<!-- STAGE 14 - Perguntas de Segurança -->
+<section class="stage" data-stage="14">
+  <h2>Etapa 14 — Perguntas de Segurança</h2>
+  <p>Defina suas perguntas de segurança para redefinir sua senha.</p>
+
+  <!-- Pergunta 1 -->
+  <label for="question1-select">Pergunta 1:</label>
+  <select id="question1-select">
+    <option value="pet1">NOME DO PET</option>
+    <option value="pet2">NOME DO PET</option>
+    <option value="pet3">NOME DO PET</option>
+  </select>
+  <input type="text" id="answer1-input" placeholder="Digite a resposta">
+
+  <!-- Pergunta 2 -->
+  <label for="question2-select">Pergunta 2:</label>
+  <select id="question2-select">
+    <option value="namorada1">NOME DA NAMORADA</option>
+    <option value="namorada2">NOME DA NAMORADA</option>
+    <option value="none">NÃO TENHO NAMORADA</option>
+  </select>
+  <input type="text" id="answer2-input" placeholder="Digite a resposta">
+
+  <!-- Pergunta 3 -->
+  <label for="question3-select">Pergunta 3:</label>
+  <select id="question3-select">
+    <option value="berlim">DATA DA QUEDA DO MURO DE BERLIM</option>
+  </select>
+  <input type="text" id="answer3-input" placeholder="Digite a data">
+
+  <button id="stage14-next-btn" disabled>Prosseguir</button>
+</section>
+
+<section class="stage" data-stage="15">
+  <h2>Etapa 15 — Seu Papa Favorito</h2>
+  <p>Selecione seu Papa favorito e informe o ano e país de nascimento corretamente.</p>
+
+  <label>Papa favorito:</label>
+  <select id="pope-select">
+    <option value="">-- Selecione --</option>
+    <option>Papa Francisco</option>
+    <option>Papa João Paulo II</option>
+    <option>Papa Bento XVI</option>
+    <option>Papa João XXIII</option>
+  </select>
+
+  <label>Ano de nascimento:</label>
+  <input type="text" id="pope-year-input" placeholder="">
+
+  <label>País de nascimento:</label>
+  <input type="text" id="pope-country-input" placeholder="">
+
+  <div id="pope-timer" style="margin:10px 0; font-weight:bold;"></div>
+
+  <button id="stage15-next-btn">Prosseguir</button>
+</section>
+
+<section class="stage" data-stage="16">
+  <h2>Etapa 16 — Escolha seu prato favorito</h2>
+  <p>Escolha entre os pratos apresentados até determinar o seu favorito:</p>
+
+  <div id="vs-container" style="display:flex; justify-content:center; gap:20px; margin:20px 0;">
+    <!-- Pratos serão preenchidos via JS -->
+  </div>
+
+  <input type="text" id="favorite-dish-input" placeholder="Seu prato favorito aparecerá aqui" readonly>
+
+  <button id="stage16-next-btn" disabled>Prosseguir</button>
+</section>
+
+<!-- ETAPA 17 -->
+<section class="stage" data-stage="17">
+  <h2>Etapa 17 — Qual seu streamer favorito?</h2>
+  <p>Escolha seu streamer favorito:</p>
+
+  <select id="streamer-select">
+    <option value="">Selecione...</option>
+    <option value="Cellbit">Cellbit</option>
+    <option value="Yuri22">Yuri22</option>
+    <option value="Dona">Dona</option>
+    <option value="Fallen">Fallen</option>
+    <option value="Alanzoka">Alanzoka</option>
+    <option value="Ninja">Ninja</option>
+    <option value="THEREALMORAES">THEREALMORAES</option>
+    <option value="Sofia espanha">Sofia Espanha</option>
+    <option value="Felipe Neto">Felipe Neto</option>
+  </select>
+
+  <button id="stage17-next-btn" disabled>Prosseguir</button>
+</section>
+
+<section class="stage" data-stage="18">
+  <h2 id="stage18-title">选择您的语言 </h2>
+  <p id="stage18-desc">请选择您熟悉的语言：</p>
+
+  <label for="language-select" id="stage18-label">语言:</label>
+  <select id="language-select">
+    <option value="">请选择语言</option>
+    <option value="zh">你好，</option>
+     <option value="es">西班牙语</option>
+    <option value="zh">中文</option>
+    <option value="en">系统正在处理中</option>
+    <option value="en">欢迎来到我们的网站。</option>
+    <option value="en">请填写您的</option>
+    <option value="es">西班牙语</option>
+    <option value="">请选择语言</option>
+    <option value="zh">信息</option>
+    <option value="es">西班牙语</option>
+    <option value="zh">中文</option>
+    <option value="pt">葡萄牙语</option>
+    <option value="en">英语</option>
+    <option value="es">西班牙语</option>
+    <option value="es">请稍等。</option>
+    <option value="es">操作成功完成！</option>
+  </select>
+
+  <button id="stage18-next-btn" disabled>继续</button>
+</section>
+
+<!-- ETAPA 19 -->
+<section class="stage" data-stage="19">
+  <h2>Etapa 19 — Verificação de Humano</h2>
+  <p>Responda às perguntas com atenção para confirmar que você não é um robô:</p>
+
+  <div id="question-container" style="margin:20px 0; font-weight:bold;"></div>
+  
+  <button id="answer-yes-btn">Sim</button>
+  <button id="answer-no-btn">Não</button>
+</section>
+
+
+<!-- STAGE 20 - RESUMO FINAL -->
+<div class="stage" data-stage="20" style="display: none;">
+  <h2>Resumo do Cadastro</h2>
+
+  <div class="resumo-container">
+    <p><strong>Nome:</strong> <span id="resumo-nome"></span></p>
+    <p><strong>Email:</strong> <span id="resumo-email"></span></p>
+    <p><strong>Telefone:</strong> <span id="resumo-telefone"></span></p>
+    <p><strong>Endereço:</strong> <span id="resumo-endereco"></span></p>
+    <!-- Adicione mais linhas conforme seus campos anteriores -->
+  </div>
+
+  <button id="finalizarCadastroBtn" class="next-btn">Finalizar Cadastro</button>
+</div>
+
+<!-- STAGE 21 - FINAL -->
+<div class="stage" data-stage="21" style="display: none;">
+  <h2>Cadastro concluído!</h2>
+  <p>Obrigado! Como nosso site não serve para nada, nenhuma informação foi salva.</p>
+
+  <button id="restartBtn" class="next-btn">Tela Inicial</button>
+</div>
+
+
+
+  </div>
+
+  <footer>
+    <p>© 2025 - O Pior Site do Mundo™ | Nenhum bom gosto foi ferido na criação deste site.</p>
+    <p>TheRealMoraes</p>
+    <div class="footer-buttons">
+    <button id="github-btn">GitHub</button>
+    <button id="email-btn">Email</button>
+  </div>
+  </footer>
+
+  <script 
+  src="script.js">
+</script>
+
+</body>
+</html>

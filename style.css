@@ -1,0 +1,701 @@
+/* ===============================
+   O PIOR SITE DO MUNDO - Versão Bonita
+   =============================== */
+
+/* Importando fontes */
+@import url('https://fonts.googleapis.com/css2?family=Paprika&family=Spectral+SC:wght@400;700&display=swap');
+
+/* Reset simples */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Corpo */
+body {
+  background-color: #f5e6cc;
+  color: #3c2f2f;
+  font-family: 'Paprika', cursive;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px;
+}
+
+/* Cabeçalhos */
+h1, h2, h3 {
+  font-family: 'Spectral SC', serif;
+  color: #2d201e;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+/* Parágrafos */
+p {
+  max-width: 600px;
+  line-height: 1.6;
+  font-size: 1.1rem;
+  color: #4b3d3d;
+  margin-bottom: 25px;
+}
+
+/* Botões gerais */
+button {
+  background: linear-gradient(135deg, #d4a373, #b08968);
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #b08968, #7f5539);
+}
+
+/* Links */
+a {
+  color: #b08968;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #7f5539;
+  text-decoration: underline;
+}
+
+/* Container principal */
+.container {
+  background-color: #fff7e6;
+  border-radius: 16px;
+  padding: 40px 60px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+/* Inputs */
+input, textarea {
+  border: 2px solid #d4a373;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 1rem;
+  margin: 10px 0;
+  width: 100%;
+  font-family: 'Spectral SC', serif;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #b08968;
+  background-color: #fff4e1;
+}
+
+/* Rodapé */
+footer {
+  margin-top: 60px;
+  font-size: 0.9rem;
+  color: #8c7a6b;
+}
+
+.footer-buttons {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.footer-buttons button {
+  background: linear-gradient(135deg, #d4a373, #b08968);
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  padding: 8px 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 7px rgba(0,0,0,0.2);
+}
+
+.footer-buttons button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #b08968, #7f5539);
+}
+
+/* ===== Responsividade Mobile ===== */
+@media (max-width: 600px) {
+  body {
+    padding: 20px;
+  }
+
+  .container {
+    padding: 25px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  button {
+    width: 100%;
+    padding: 14px 0;
+  }
+
+  #dob-input {
+    width: 100%;
+    font-size: 0.95rem;
+  }
+
+  #dob-next-btn {
+    width: 100%;
+    padding: 12px 0;
+  }
+
+  #circular-picker {
+    width: 250px;
+    height: 250px;
+  }
+
+  #picker-pointer {
+    width: 16px;
+    height: 16px;
+    top: 117px;
+    left: 117px;
+  }
+}
+
+/* ======= Animações entre seções ======= */
+.stage {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.stage.active {
+  display: block;
+  opacity: 1;
+}
+
+.fade-out {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+/* Mensagem de feedback nickname */
+#nickname-msg {
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Inputs específicos */
+input#nickname-input,
+#confirm-nickname-input,
+#password-input,
+#confirm-password-input {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 10px 14px;
+  border: 2px solid #d4a373;
+  border-radius: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+/* Botões específicos */
+#nickname-btn,
+#confirm-btn,
+#password-next-btn,
+#dob-next-btn {
+  background: linear-gradient(135deg, #d4a373, #b08968);
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+#nickname-btn:hover,
+#confirm-btn:hover,
+#password-next-btn:hover,
+#dob-next-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #b08968, #7f5539);
+}
+
+/* Botão desabilitado */
+#password-next-btn[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ===============================
+   Stage 6 - Senha
+   =============================== */
+#password-msg {
+  color: #e74c3c;
+  white-space: pre-line;
+}
+
+#show-password-btn,
+#show-confirm-pass-btn {
+  background: linear-gradient(135deg, #d4a373, #b08968);
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  padding: 8px 16px;
+  cursor: pointer;
+  box-shadow: 0 3px 7px rgba(0,0,0,0.15);
+}
+
+#password-success {
+  margin-top: 12px;
+  font-weight: bold;
+  color: #27AE60;
+  display: none;
+}
+
+/* ===============================
+   Stage 8 - Seletor Circular
+   =============================== */
+#circular-picker {
+  display: none;
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 20px auto;
+  border-radius: 50%;
+  border: 2px solid #333;
+  background: #f5f5f5;
+}
+
+#picker-pointer {
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: center -130px; /* raio = metade do tamanho do círculo */
+  transform: rotate(0deg); /* posição inicial */
+  cursor: grab;
+  transition: transform 0.05s linear;
+}
+
+/* Input de data */
+#dob-input {
+  width: 220px;
+  font-size: 1rem;
+  padding: 8px 12px;
+  border: 2px solid #d4a373;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* Botão prosseguir */
+#dob-next-btn {
+  margin-top: 20px;
+  background: linear-gradient(135deg, #d4a373, #b08968);
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  padding: 10px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#dob-next-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #b08968, #7f5539);
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  #circular-picker {
+    width: 250px;
+    height: 250px;
+  }
+
+  #picker-pointer {
+    transform-origin: center -108px; /* metade do círculo menor */
+    width: 16px;
+    height: 16px;
+  }
+
+  #dob-input {
+    width: 100%;
+    font-size: 0.95rem;
+  }
+
+  #dob-next-btn {
+    width: 100%;
+    padding: 12px 0;
+  }
+}
+
+/* Stage 9 */
+#age-input {
+  width: 250px;
+  padding: 10px;
+  border: 2px solid #444;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  background: #1a1a1a;
+  color: #f0f0f0;
+}
+
+#age-next-btn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #b08968;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#age-next-btn:hover {
+  background: #a1754f;
+}
+
+
+/* Estilo para selects e inputs do Stage 14 */
+#question1-select, #question2-select, #question3-select,
+#answer1-input, #answer2-input, #answer3-input {
+  width: 100%;
+  padding: 10px 12px;
+  margin: 5px 0 15px 0;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+#question1-select:focus, #question2-select:focus, #question3-select:focus,
+#answer1-input:focus, #answer2-input:focus, #answer3-input:focus {
+  border-color: #27AE60;
+  box-shadow: 0 0 8px rgba(39, 174, 96, 0.4);
+  outline: none;
+}
+
+#stage14-next-btn {
+  padding: 12px 20px;
+  background-color: #27AE60;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#stage14-next-btn:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+#stage14-next-btn:hover:not(:disabled) {
+  background-color: #2ecc71;
+}
+
+/* ===== STAGE 15 - Papa Favorito ===== */
+#pope-select,
+#pope-year-input,
+#pope-country-input {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 12px;
+  margin: 8px 0 16px 0;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  box-sizing: border-box;
+}
+
+#pope-select:focus,
+#pope-year-input:focus,
+#pope-country-input:focus {
+  border-color: #27AE60;
+  box-shadow: 0 0 6px rgba(39, 174, 96, 0.5);
+  outline: none;
+}
+
+#stage15-next-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #27AE60;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#stage15-next-btn:hover {
+  background-color: #1E8449;
+}
+
+#stage15-next-btn:disabled {
+  background-color: #95A5A6;
+  cursor: not-allowed;
+}
+
+#pope-timer {
+  font-size: 18px;
+  font-weight: bold;
+  color: #E74C3C;
+  margin-bottom: 16px;
+}
+
+#vs-container img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: 3px solid #ccc;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+#vs-container img:hover {
+  transform: scale(1.05);
+  border-color: #27AE60;
+}
+
+#favorite-dish-input {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 12px;
+  margin: 16px 0;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background-color: #f5f5f5;
+  box-sizing: border-box;
+}
+
+#stage16-next-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #27AE60;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#stage16-next-btn:hover {
+  background-color: #1E8449;
+}
+
+#stage16-next-btn:disabled {
+  background-color: #95A5A6;
+  cursor: not-allowed;
+}
+
+/* ===== STAGE 17 - Select e Botão ===== */
+#streamer-select {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 16px;
+  border: 2px solid #444;
+  border-radius: 8px;
+  background-color: #111;
+  color: #fff;
+  appearance: none; /* remove setinha padrão */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#streamer-select:hover {
+  border-color: #27ae60;
+  background-color: #222;
+}
+
+#streamer-select:focus {
+  outline: none;
+  border-color: #27ae60;
+  box-shadow: 0 0 5px #27ae60;
+}
+
+/* Custom arrow */
+#streamer-select::-ms-expand {
+  display: none;
+}
+
+/* Botão Prosseguir */
+#stage17-next-btn {
+  margin-top: 20px;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #27ae60;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#stage17-next-btn:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+  color: #ccc;
+}
+
+#stage17-next-btn:hover:not(:disabled) {
+  background-color: #2ecc71;
+  transform: translateY(-2px);
+}
+
+#language-select {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 2px solid #555;
+  border-radius: 6px;
+  background: #f0f0f0;
+  appearance: none;
+  cursor: pointer;
+  margin-bottom: 15px;
+  transition: border-color 0.3s, background 0.3s;
+}
+
+#language-select:hover {
+  border-color: #27ae60;
+  background: #e0f7e0;
+}
+
+#language-select:focus {
+  outline: none;
+  border-color: #2ecc71;
+  background: #dff0d8;
+}
+
+#stage18-next-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: none;
+  background-color: #555;
+  color: #fff;
+  cursor: not-allowed;
+  transition: background 0.3s;
+}
+
+#stage18-next-btn.enabled {
+  background-color: #27ae60;
+  cursor: pointer;
+}
+
+/* ===========================
+   Stage 19 - Perguntas de Robo
+   =========================== */
+
+/* Container da pergunta */
+#question-container {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+  padding: 10px 20px;
+  color: #2C3E50;
+}
+
+/* Container dos botões */
+#answer-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 40px; /* espaçamento entre os botões */
+  flex-wrap: wrap; /* permite quebrar em telas pequenas */
+}
+
+/* Botões Sim e Não */
+#answer-yes-btn,
+#answer-no-btn {
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  min-width: 120px;
+}
+
+/* Botão Sim */
+#answer-yes-btn {
+  background-color: #27AE60;
+  color: white;
+}
+
+/* Botão Não */
+#answer-no-btn {
+  background-color: #E74C3C;
+  color: white;
+}
+
+/* Hover efeito */
+#answer-yes-btn:hover {
+  background-color: #2ECC71;
+  transform: scale(1.05);
+}
+#answer-no-btn:hover {
+  background-color: #C0392B;
+  transform: scale(1.05);
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  #answer-yes-btn,
+  #answer-no-btn {
+    width: 100%;
+    max-width: 250px;
+    margin-bottom: 15px;
+  }
+}
+
+/* Apenas para manter a consistência dos outros stages */
+.stage {
+  display: none;
+}
+
+.stage.active {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
