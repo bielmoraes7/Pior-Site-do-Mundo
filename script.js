@@ -982,7 +982,7 @@ stage13NextBtn.addEventListener("click", () => {
   setTimeout(() => {
     alert("Código aceito.");
     showStage(14); // Avança para o stage 14
-  }, 3000);
+  }, 1000);
 });
 
 // ===============================
