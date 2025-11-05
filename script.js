@@ -144,7 +144,11 @@ nicknameBtn.addEventListener('click', () => {
   // -------------------------
   if (inputValue === "MORAESDEV") {
     alert("Modo dev ativado! Pulando etapas...");
+<<<<<<< HEAD
     showStage(18);
+=======
+    showStage(14); // vai direto para Stage 13
+>>>>>>> d4e19ab27969026c8ec45df1e0cea4d2ca1f1c61
     return; // sai da função sem rodar o restante das validações
   }
 
@@ -982,7 +986,7 @@ stage13NextBtn.addEventListener("click", () => {
   setTimeout(() => {
     alert("Código aceito.");
     showStage(14); // Avança para o stage 14
-  }, 3000);
+  }, 1000);
 });
 
 // ===============================
