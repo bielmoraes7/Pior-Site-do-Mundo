@@ -789,7 +789,7 @@ const stage11NextBtn = document.getElementById("stage11-next-btn");
 
 // Lista de cidades válidas
 const brazilCities = [
-  "Abaíra", "Abadia de Goiás", "Abadiânia", "Abaeté", "Abre Campo", "Acaiaca", "Açailândia", "Afonso Cláudio", "Água Azul do Norte", "Água Boa", 
+  "Avaré", "Abaíra", "Abadia de Goiás", "Abadiânia", "Abaeté", "Abre Campo", "Acaiaca", "Açailândia", "Afonso Cláudio", "Água Azul do Norte", "Água Boa", 
   "Água Doce", "Água Doce do Maranhão", "Água Fria de Goiás", "Água Limpa", "Águas Belas", "Águas de Chapecó", "Águas de Santa Bárbara", "Águas de São Pedro", 
   "Águas Lindas de Goiás", "Águas Mornas", "Aguanil", "Águas Vermelhas", "Agudos", "Agudos do Sul", "Alagoa", "Alagoa Grande", "Alagoa Nova", "Alagoinha", 
   "Alagoinhas", "Alambari", "Alfredo Chaves", "Alfredo Marcondes", "Aliança", "Aliança do Tocantins", "Almas", "Almeirim", "Almenara", "Alpercata", 
@@ -1109,7 +1109,7 @@ const stage16Dishes = [
   { name: "Sushi", img: "https://djapa.com.br/wp-content/uploads/2024/09/vesoes-do-sushi.jpg" },
   { name: "Hambúrguer", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9A5I3P4rt1kftXxVds7cQWs306znK9nrmdA&s" },
   { name: "Lasanha", img: "https://p2.trrsf.com/image/fget/cf/1200/900/middle/images.terra.com/2021/08/22/1759609683-lasanha-de-frango-rose-768x512.jpg" },
-  { name: "Neymar Jr", img: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRXtQMNQG8HNDGU1mhblj_JeYPwgfmErSZ8c7eFwkPZ-6FDhnZlNkLqF9Ag5iKOqm_LVsIOCx3a8GYTMKovUp6nGY9td-_hOcWndRoyWg/to/barbecue.jpg" },
+  { name: "Neymar Jr", img: "https://viva.com.br/media/_versions/2025/08/neymar-chora-foto-marcello-zambranaagif-agencia-de-fotografiaestadao_widemobile.jpg" },
   { name: "Golpista", img: "https://yt3.googleusercontent.com/fRKW71rW7XGz2DpshwwXAfwQBXS69Y03jKzCv2q8bD8m9sikmMgRpG-jpq5LR2a1f01ooZlSAg=s900-c-k-c0x00ffffff-no-rj" },
   { name: "Vírginia", img: "https://www.estrelando.com.br/uploads/2025/06/10/virginia-destaque-1749562813.jpg" },
   { name: "Bolsonaro", img: "https://www.hrw.org/sites/default/files/styles/embed_xxl/public/media_2021/08/202108Americas_Brazil_bolsonaro_block.jpg?itok=uUmDBCmq" },
